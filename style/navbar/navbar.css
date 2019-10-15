@@ -1,0 +1,36 @@
+.navbar-tribus{
+    padding: 0rem 1rem;
+    font-family: Calibri;
+    box-shadow: 0px 0px 5px 0px #0000001a;
+}
+
+.navbar-buttons{
+    background-color: #7d7070;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.navbar-buttons:active,
+.navbar-buttons:hover,
+.navbar-buttons:focus{
+    background-color: #CF1717;
+}
+.navbar-logo{
+    padding-top: 0;
+    margin-right: 3rem;
+    margin-left: 1rem;
+}
+
+@media only screen and (max-width: 600px){
+
+    .btn-collapse{
+        margin-top: 10px;
+        border-top: 1px solid #0000001a;
+        padding: 20px 10px;
+    }
+}
+
