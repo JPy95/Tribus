@@ -8,6 +8,6 @@
 <link rel="stylesheet" type="text/css" href="style/bootstrap/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="style\navbar\navbar.css">
 <link rel="stylesheet" type="text/css" href="style\footer\footer.css">
-<link rel="stylesheet" type="text/css" href="style\index\index.css">
+
 
     

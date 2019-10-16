@@ -13,22 +13,22 @@
         </div>
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="index.php#quemSomos">
+                <a class="nav-link" href="#quemSomos" role="button" aria-expanded="false" aria-controls="quemSomos">
                     Quem Somos
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php#comoFunciona">
+                <a class="nav-link" href="#comoFunciona" role="button" aria-expanded="false" aria-controls="comoFunciona">
                     Como Funciona
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php#perfisComp">
+                <a class="nav-link" href="#perfisComp" role="button" aria-expanded="false" aria-controls="perfisComp">
                     Perfis Compotamentais
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="index.php#perfisProf">
+                <a class="nav-link" href="#perfisProf" role="button" aria-expanded="false" aria-controls="perfisProf">
                     Perfis Profissionais
                 </a>
             </li>
