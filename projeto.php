@@ -31,7 +31,7 @@
                             <option value="">Ciência da Computação</option>
                         </select>
                     </div>
-                    <div class="btn-projeto">
+                    <div class="btn-tribus">
                         <button class="btn_style-projeto">Criar Projeto</button>
                     </div>
                 </form>

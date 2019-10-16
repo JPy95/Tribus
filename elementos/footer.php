@@ -7,16 +7,16 @@
         <div class="footer-links">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Criar Projeto<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="projeto.php">Criar Projeto<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Entrar em Projeto<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="questionario.php">Entrar em Projeto<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Quem Somos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Quem Somos<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Como Funciona</a>
+                    <a class="nav-link" href="index.php">Como Funciona</a>
                 </li>
             </ul>
         </div>

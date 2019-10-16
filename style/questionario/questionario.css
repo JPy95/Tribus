@@ -1,0 +1,99 @@
+.questionario{
+    width: 85%;
+    margin: 15px auto;
+}
+
+h1{
+    text-align: center;
+    border-bottom: 1px solid #0000001a;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}
+
+.selects-quest{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.select-quest{
+    font-size: 14px;
+    margin: 0 5px;
+    background-color: #f8f9fa;
+    color: rgba(0, 0, 0, 0.5);
+    border-color: #0000001a;
+}
+
+.dropdown-item{
+    font-size: 11px;
+}
+
+.form-quest{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.span-quest{
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.perguntas{
+    font-weight: 500;
+}
+
+.conjuto-perguntas{
+    width: 25%;
+    margin-right: 10px;
+}
+
+.label-resp{
+    font-size: 15px;
+    font-style: italic;
+    padding-left: 5px;
+}
+
+.input-radio{
+    margin-left: 10px;
+}
+
+label{
+    margin-bottom: 0;
+}
+
+.btn-quest{
+    margin-top: 65px;
+    margin-left: -80px;
+}
+
+@media only screen and (max-width: 600px){
+
+    .questionario{
+        width: 95%;
+    }
+
+    h1{
+        font-size: 19px;
+    }
+
+    .span-quest{
+        font-size: 11px;
+    }
+
+    .form-quest{
+        display: block;
+    }
+
+    .conjuto-perguntas{
+        width: 100%;
+        margin-right: 0;
+        margin-left: 35px;
+    }
+
+    .btn-quest{
+        margin: 25px 70px;
+    }
+}

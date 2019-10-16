@@ -24,6 +24,21 @@
     margin-left: 1rem;
 }
 
+.btn-tribus{
+    background-color: #cf1717;
+    color: white;
+    font-size: 15px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-tribus:active,
+.btn-tribus:focus,
+.btn-tribus:hover{
+    background-color: #5a6268;
+}
+
 @media only screen and (max-width: 600px){
 
     .btn-collapse{
