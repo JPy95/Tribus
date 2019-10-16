@@ -7,17 +7,16 @@
 .navbar-buttons{
     background-color: #7d7070;
     color: white;
-    padding: 5px 15px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
     cursor: pointer;
+    text-decoration: none;
+    padding: 7px;
+    border-radius: 5px;
 }
 .navbar-buttons:active,
 .navbar-buttons:hover,
 .navbar-buttons:focus{
     background-color: #CF1717;
+    text-decoration: none;
 }
 .navbar-logo{
     padding-top: 0;

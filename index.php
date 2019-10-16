@@ -1,22 +1,12 @@
 <!doctype html>
-<html>
+<html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="img\Icones\logo1.png" >
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="style/bootstrap/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="style\navbar\navbar.css">
-    <link rel="stylesheet" type="text/css" href="style\footer\footer.css">
+    <?php include_once('elementos\head.php')?>
     <link rel="stylesheet" type="text/css" href="style\index\index.css">
-
-    <title>Tribus</title>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar-tribus navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar-tribus navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <a class="navbar-logo navbar-brand" href="#">
             <img src="img\Logo\Logo.png" width="75" height="75" alt="">
         </a>
@@ -25,21 +15,29 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="mr-3 ml-3 btn-collapse">
-                <button class="navbar-buttons">Entrar em Projeto</button>
-                <button class="navbar-buttons">Criar Projeto</button>
+                <a href="#" class="navbar-buttons">Entrar em Projeto</a>
+                <a href="projeto.html" class="navbar-buttons">Criar Projeto</a>
             </div>
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Quem Somos <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#quemSomos" role="button" aria-expanded="false" aria-controls="quemSomos">
+                        Quem Somos
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Como Funciona</a>
+                    <a class="nav-link" href="#comoFunciona" role="button" aria-expanded="false" aria-controls="comoFunciona">
+                        Como Funciona
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Perfis Compotamentais</a>
+                    <a class="nav-link" href="#perfisComp" role="button" aria-expanded="false" aria-controls="perfisComp">
+                        Perfis Compotamentais
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Perfis Profissionais</a>
+                    <a class="nav-link" href="#perfisProf" role="button" aria-expanded="false" aria-controls="perfisProf">
+                        Perfis Profissionais
+                    </a>
                 </li>
             </ul>
         </div>
@@ -47,7 +45,7 @@
 
     <!-- Conteudo -->
     <div class="conteudo-index">
-        <div class="item-index">
+        <div class="item-index" id="quemSomos">
             <img src="img\Logo\Logo.png" width="200" height="200" class="img-index">
             <div class="paragrafo-index">
                 <h5>Quem somos</h5>
@@ -60,7 +58,7 @@
                 </p>
             </div>
         </div>
-        <div class="item-index">
+        <div class="item-index" id="comoFunciona">
             <img src="img\teste.png" class="imglon-index img-index" style="display: none;" width="200" height="168">
             <div class="paragrafo-index">
                 <h5>Como Funciona</h5>
@@ -74,7 +72,7 @@
             </div>
             <img src="img\teste.png" class="imgl-index img-index" width="200" height="168">
         </div>
-        <div class="item-index">
+        <div class="item-index" id="perfisComp">
             <div>
                 <img src="img\aguia.png" width="100" height="84" class="img_comp-index">
                 <img src="img\gato.png" width="100" height="84" class="img_comp-index">
@@ -94,7 +92,7 @@
                 </p>
             </div>
         </div>
-        <div class="item-index" style="border-bottom: none; padding-bottom: 0;">
+        <div class="item-index" style="border-bottom: none; padding-bottom: 0;" id="perfisProf">
             <div class="group_select-index">
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle select-index" style="box-shadow: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
