@@ -68,15 +68,6 @@ option{
     font-size: 13px;
 }
 
-.btn_style-projeto{
-    background-color: #cf1717;
-    color: white;
-    font-size: 15px;
-    padding: 5px 20px;
-    border: none;
-    border-radius: 5px;
-}
-
 .btn-projeto{
     width: 100%;
     margin: 20px 45%;

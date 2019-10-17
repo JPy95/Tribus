@@ -3,41 +3,17 @@
     <head>
         <?php include_once('elementos\head.php')?>
         <link rel="stylesheet" type="text/css" href="style\questionario\questionario.css">
+        <link rel="stylesheet" type="text/css" href="style\modal\modal.css">
     </head>
-    <body>
         <!-- Navbar -->
         <?php include_once('elementos\navbar.php')?>
+        
+        <!-- Modal -->
+        <?php include_once('elementos\modal.php')?> 
 
         <!-- Conteudo -->
         <div class="questionario">
-            <div>
-                <h1>Questionário de Perfil Comportamental</h1>
-                <span class="span-quest">Selecione a area de atuação e profissão que deseja especializar</span>
-                <div class="selects-quest">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle select-quest" style="box-shadow: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Área de Atuação
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Dados</a>
-                            <a class="dropdown-item" href="#">Desenvolvimento/ Programação</a>
-                            <a class="dropdown-item" href="#">Governânça</a>
-                            <a class="dropdown-item" href="#">Infraestrutura</a>
-                            <a class="dropdown-item" href="#">Negócios/ Projetos/ Comercial</a>
-                        </div>
-                    </div>
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle select-quest" style="box-shadow: none;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Profissões
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1>Questionário de Perfil Comportamental</h1>
             <form action="" class="form-quest">
                 <div class="conjuto-perguntas">
                     <label class="perguntas">1- Eu sou...</label><br>
@@ -175,7 +151,8 @@
                 </div>
             </form>
         </div>
+
         <!-- Footer -->
-        <?php include_once('elementos\footer.php')?>
+        <?php include_once('elementos\footer.php')?>        
     </body>
 </html>

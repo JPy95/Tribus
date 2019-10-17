@@ -1,0 +1,27 @@
+.titulo-modal{
+    background-color: #f8f9fa ;
+}
+
+h6{
+    font-style: italic;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.form-modal{
+    padding: 5px;
+}
+
+.input-modal{
+    border-radius: 5px;
+    border: 1px solid #0000001a;
+    margin: 0 5px;
+    padding: 6px 12px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 16px;
+}
+
+.label-modal{
+    font-size: 14px;
+    font-style: italic;
+}
