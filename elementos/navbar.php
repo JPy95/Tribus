@@ -1,4 +1,3 @@
-<!-- Navbar -->
 <nav class="navbar-tribus navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-logo navbar-brand" href="index.php">
         <img src="img\Logo\Logo.png" width="75" height="75" alt="">
