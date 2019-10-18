@@ -15,7 +15,7 @@
             <div class="paragrafo-index">
                 <h5>Quem somos</h5>
                 <p>
-                    Nunc consequat quam tortor, vitae porta ante ullamcorper ac. Nunc eu orci ac ante venenatis bibendum. 
+                    Cleiton Ribeiro quam tortor, vitae porta ante ullamcorper ac. Nunc eu orci ac ante venenatis bibendum. 
                     Vivamus rhoncus sit amet quam a aliquam. In luctus luctus urna ac semper. Fusce nec faucibus mi. 
                     Sed nec sem sit amet purus fermentum consectetur. Praesent vitae eros vitae dolor consequat finibus. 
                     Curabitur viverra ipsum non magna accumsan, vitae suscipit lorem luctus. Fusce eu dignissim risus. 
