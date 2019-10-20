@@ -57,7 +57,7 @@
                                 <td class="td-squad">Comunicador</td>
                             </tr>
                         </table>
-                        <span>Grupo A</span>
+                        <span>Grupo B</span>
                         <table class="table-squad">
                             <tr>
                                 <th class="th-squad">Nome</th>
@@ -85,7 +85,7 @@
                                 <td class="td-squad">Bom no oratório</td>
                             </tr>
                         </table>
-                        <span>Grupo A</span>
+                        <span>Grupo C</span>
                         <table class="table-squad">
                             <tr>
                                 <th class="th-squad">Nome</th>
@@ -115,7 +115,7 @@
                         </table>
                     </div>
                     <div class="squad">
-                        <span>Grupo A</span>
+                        <span>Grupo D</span>
                         <table class="table-squad">
                             <tr>
                                 <th class="th-squad">Nome</th>
@@ -143,7 +143,7 @@
                                 <td class="td-squad">Bom no oratório</td>
                             </tr>
                         </table>
-                        <span>Grupo A</span>
+                        <span>Grupo E</span>
                         <table class="table-squad">
                             <tr>
                                 <th class="th-squad">Nome</th>

@@ -18,6 +18,9 @@
                     </span>
                 </div>
             </div>
+
+
+
             <div class="form-projeto">
                 <form action="">
                     <div>
@@ -28,7 +31,19 @@
                         <label for="">Curso:</label><br>
                         <select name="" id="">
                             <option value="">Selecione uma opção.</option>
-                            <option value="">Ciência da Computação</option>
+                            <option value="">Ciências da Computação</option>
+                            <option value="">Sistemas de Informações</option>
+                            <option value="">Engenharia Elétrica</option>
+
+                        </select>
+                    </div>                    
+                    <div class="select">
+                        <label for="">Turma:</label><br>
+                        <select name="" id="">
+                        <option value="">Selecione uma opção.</option>
+                            <option value="">CCP3AN-CMA1</option>
+                            <option value="">SIN2BN-CMA</option>
+                            <option value="">EEL7AN-CMA</option>
                         </select>
                     </div>
                     <div class="btn-projeto">
