@@ -1,3 +1,5 @@
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="style\modal\modal.css">
 <!-- jquery -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- chamada da função Active Modal -->
@@ -18,10 +20,6 @@
                         <label for="nome-modal" class="label-modal">Qual seu nome?</label><br>
                         <input type="text" class="input-modal" id="nome-modal" style="width: 98%;"><br>
                         <div style="display: flex;">
-                            <div>
-                                <label for="ra-modal" class="label-modal">Qual seu RA?</label><br>
-                                <input type="text" class="input-modal" id="ra-modal"><br>
-                            </div>
                             <div>
                                 <label for="projeto-modal" class="label-modal">Qual o Código do Projeto?</label><br>
                                 <input type="text" class="input-modal" id="projeto-modal"><br>

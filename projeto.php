@@ -19,10 +19,8 @@
                 </div>
             </div>
 
-
-
             <div class="form-projeto">
-                <form action="">
+                <form action="php\servicos\_projetos.php" method="post">
                     <div>
                         <label for="">Tema do Projeto:</label><br>
                         <input type="text">
@@ -47,7 +45,7 @@
                         </select>
                     </div>
                     <div class="btn-projeto">
-                        <button class="btn-tribus">Criar Projeto</button>
+                        <button class="btn-tribus" type="submit">Criar Projeto</button>
                     </div>
                 </form>
             </div>
