@@ -22,7 +22,7 @@ class Conexao
         $this->usuario = 'tribus@tribusdb';
         $this->senha = 'Unibh@2019';
     }
-    
+
     function __construct()
     {
         try {	
@@ -47,9 +47,9 @@ class Conexao
     }
     function conectar()
     {
-        
+        $opcao = array(PDO::MYSQL_ATTR_SSL_CA => '..\ssl\BaltimoreCyberTrustRoot.crt.pem');
         $query = "mysql:host=" . $this->host . ";dbname=" . $this->bd . ";charset=utf8";
-        $this->conexao = new PDO($query, $this->usuario, $this->senha);
+        $this->conexao = new PDO($query, $this->usuario, $this->senha, $opcao);
         
         return $this->conexao;
     }

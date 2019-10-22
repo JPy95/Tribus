@@ -6,6 +6,7 @@
 
     $query="insert into exemplo values(12313,'bost',8916)";
 
+
     $con = $conexao->conectar();
 
     $stmt = $con->prepare($query);
