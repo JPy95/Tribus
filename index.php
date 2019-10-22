@@ -13,7 +13,7 @@
         <div class="item-index" id="quemSomos">
             <img src="img\Logo\Logo.png" width="200" height="200" class="img-index">
             <div class="paragrafo-index">
-                <h5>Quem @@ somos:</h5>
+                <h5>Quem somos:</h5>
                 <p>
                 Tribus é um projeto acadêmico que tem como objetivo inicial auxiliar professores a organizarem grupos em sala de aula 
                 forma objetiva. Para tanto, ele poderá contar com o suporte do algoritmo de distribuição do Tribus, 
