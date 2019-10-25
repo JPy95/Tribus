@@ -17,9 +17,9 @@ class Conexao
     
     private function configuraDados()
     {
-        $this->bd = 'tribusdb';
-        $this->host = 'tribusdb.mysql.database.azure.com';
-        $this->usuario = 'tribus@tribusdb';
+        $this->bd = 'u812860292_tribusdb';
+        $this->host = 'auth-db248.hostinger.com';
+        $this->usuario = 'u812860292_tribus';
         $this->senha = 'Unibh@2019';
     }
 
@@ -47,9 +47,9 @@ class Conexao
     }
     function conectar()
     {
-        $opcao = array(PDO::MYSQL_ATTR_SSL_CA => '..\ssl\BaltimoreCyberTrustRoot.crt.pem');
+
         $query = "mysql:host=" . $this->host . ";dbname=" . $this->bd . ";charset=utf8";
-        $this->conexao = new PDO($query, $this->usuario, $this->senha, $opcao);
+        $this->conexao = new PDO($query, $this->usuario, $this->senha);
         
         return $this->conexao;
     }
