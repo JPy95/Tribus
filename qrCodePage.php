@@ -10,13 +10,14 @@
         
         <!-- Conteudo -->
         <div class="body-qrCode">
-            <h1>Projeto: Tema do Projeto</h1>
+
+            <h1>Projeto: <?php echo $_GET['tema']?></h1>
 
             <div class="conteudo-qrCode">
                 <div class="qrCode">
                     <?php
                         $aux = 'qrCode/php/qr_img.php?';
-                        $aux .= 'd=questionario.php&';
+                        $aux .= 'd=questionario.php?projeto='.$_GET['projeto'].'&';
                         $aux .= 'e=H&';
                         $aux .= 's=10&';
                         $aux .= 't=J';
@@ -24,7 +25,7 @@
                     <img src="<?php echo $aux?>" class="img-mobile">
                 </div>
                 <div class="resumoQrcode">
-                    <span>Código do Projeto: </span><label>174665132</label><br>
+                    <span>Código do Projeto: </span><label><?php echo $_GET['projeto']?></label><br>
                     <span>Quantidade de Alunos: </span><label>17</label><br>
                     <div class="btn-qrCode">
                         <a href="#" class="link-tribus">Gerar Grupos</a>

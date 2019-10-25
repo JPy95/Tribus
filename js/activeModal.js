@@ -1,3 +1,11 @@
 $(window).load(function() {
-    $('#ExemploModalCentralizado').modal('show');
+
+    var aluno = window.location.search.substring(1);
+
+    if(aluno.split('&')[0] === "aluno=true"){
+        $('#ExemploModalCentralizado').modal('hide');
+    } else {
+        $('#ExemploModalCentralizado').modal('show');
+    }
+    
 });

@@ -22,28 +22,40 @@
             <div class="form-projeto">
                 <form action="php\servicos\_projetos.php" method="post">
                     <div>
-                        <label for="">Tema do Projeto:</label><br>
-                        <input type="text">
+                        <label for="tema">Tema do Projeto:</label><br>
+                        <input type="text" name="tema" id="tema">
                     </div>
-                    <div class="select">
-                        <label for="">Curso:</label><br>
-                        <select name="" id="">
-                            <option value="">Selecione uma opção.</option>
-                            <option value="">Ciências da Computação</option>
-                            <option value="">Sistemas de Informações</option>
-                            <option value="">Engenharia Elétrica</option>
+                    <div class="select_group-tribus">
+                        <div style="margin-right: 15px; width: 225px;">
+                            <label for="curso">Curso:</label><br>
+                            <select name="curso" id="curso">
+                                <option value="0">Selecione uma opção.</option>
+                                <option value="Ciencia da Computacao">Ciências da Computação</option>
+                                <option value="Sistema da Informacao">Sistemas da Informaçao</option>
+                                <option value="GTI">Gestão de TI</option>
 
-                        </select>
+                            </select>
+                        </div>
+                        <div style="margin-right: 15px; width: 225px;">
+                            <label for="unidade">Unidade:</label><br>
+                            <select name="unidade" id="unidade">
+                                <option value="0">Selecione uma opção.</option>
+                                <option value="Buritis">Buritis</option>
+                                <option value="Cristiano Machado">Cristiano Machado</option>
+                                <option value="Lourdes">Lourdes</option>
+                            </select>
+                        </div>
+                        <div style="margin-right: 15px; width: 225px;">
+                            <label for="turno">Turno:</label><br>
+                            <select name="turno" id="turno">
+                                <option value="0">Selecione uma opção.</option>
+                                <option value="Matutino">Matutino</option>
+                                <option value="Vespertino">Vespertino</option>
+                                <option value="Intergal">Integral</option>
+                                <option value="Noturno">Noturno</option>
+                            </select>
+                        </div>
                     </div>                    
-                    <div class="select">
-                        <label for="">Turma:</label><br>
-                        <select name="" id="">
-                        <option value="">Selecione uma opção.</option>
-                            <option value="">CCP3AN-CMA1</option>
-                            <option value="">SIN2BN-CMA</option>
-                            <option value="">EEL7AN-CMA</option>
-                        </select>
-                    </div>
                     <div class="btn-projeto">
                         <button class="btn-tribus" type="submit">Criar Projeto</button>
                     </div>
