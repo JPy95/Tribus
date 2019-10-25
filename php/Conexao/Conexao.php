@@ -47,7 +47,6 @@ class Conexao
     }
     function conectar()
     {
-
         $query = "mysql:host=" . $this->host . ";dbname=" . $this->bd . ";charset=utf8";
         $this->conexao = new PDO($query, $this->usuario, $this->senha);
         
