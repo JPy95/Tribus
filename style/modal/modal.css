@@ -2,6 +2,8 @@
     background-color: #f8f9fa ;
 }
 
+
+
 h6{
     font-style: italic;
     font-weight: 500;
@@ -26,9 +28,18 @@ h6{
     font-style: italic;
 }
 
+.modal-footer{
+    justify-content: center;
+    border: none;
+}
+
 @media only screen and (max-width: 600px){
 
     .modal-content{
         width: 97%;
+    }
+
+    .modal-tribus{
+        width: 96%
     }
 }

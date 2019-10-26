@@ -1,5 +1,5 @@
 .conteudo-projeto{
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -61,6 +61,7 @@ select{
     background-size: 17px;
     background-position-x: 97%;
     background-position-y: 50%;
+    font-size: 13px;
 }
 
 
@@ -71,7 +72,7 @@ option{
 
 .btn-projeto{
     width: 100%;
-    margin: 20px 45%;
+    margin: 20px 40%;
     margin-top: 10px;
 }
 

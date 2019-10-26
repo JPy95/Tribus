@@ -1,11 +1,11 @@
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="style\modal\modal.css">
+<link rel="stylesheet" type="text/css" href="style/modal/modal.css">
 <!-- jquery -->
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <!-- chamada da função Active Modal -->
-<script type="text/javascript" src="js\activeModal.js"></script>
+<script type="text/javascript" src="js/activeModal.js"></script>
 
-<div class="modal fade show" id="ExemploModalCentralizado" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal-tribus modal fade show" id="ExemploModalCentralizado" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header titulo-modal">
@@ -13,7 +13,7 @@
             </div>
             <div class="modal-body">
                 <h6>Para que você possa ingressar em um projeto, precisamos de conhecer você melhor.</h6>
-                <form action="php\servicos\_modal.php" method="post">
+                <form action="php/servicos/_modal.php" method="post">
                     <div>
                         <label for="nome-modal" class="label-modal">Qual seu nome?</label><br>
                         <input type="text" class="input-modal" id="nome-modal" name="nome" style="width: 98%;"><br>

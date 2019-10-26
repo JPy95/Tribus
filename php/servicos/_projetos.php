@@ -1,6 +1,6 @@
 <?php
 
-    include_once('..\Conexao\Conexao.php');
+    include_once('../Conexao/Conexao.php');
 
     $conexao = new Conexao();
 
@@ -10,11 +10,11 @@
     $curso = $_POST['curso'];
     $unidade = $_POST['unidade'];
     $turno = $_POST['turno'];
+    $qtdeAlunos = $_POST['qtdeAlunos'];
     
-    $query="INSERT INTO projeto VALUES(".$projeto.",'".$tema."','".$curso."','".$unidade."','".$turno."')";
-
+    //Inserindo dados no Banco
+    $query="INSERT INTO projeto VALUES(".$projeto.",'".$tema."','".$curso."','".$unidade."','".$turno."',".$qtdeAlunos.")";
     $con = $conexao->conectar();
-
     $stmt = $con->prepare($query);
     $stmt->execute();
     

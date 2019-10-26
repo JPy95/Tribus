@@ -1,6 +1,6 @@
 <footer class="bg-light" style="box-shadow: 0px 0px 5px 0px #0000001a;">
     <a class="footer-logo navbar-brand" href="#">
-        <img src="img\Logo\Logo.png" width="200">
+        <img src="img/Logo/Logo.png" width="200">
     </a>
     <div class="footer-mob">
 
@@ -24,13 +24,13 @@
             <h5>Redes Sociais</h5>
             <ul class="icons-footer">
                 <li class="icon-footer">
-                    <a href=""><img src="img\Icones\icons8-facebook-80.png" width="40"></a>
+                    <a href=""><img src="img/Icones/icons8-facebook-80.png" width="40"></a>
                 </li>
                 <li class="icon-footer">
-                    <a href=""><img src="img\Icones\icons8-instagram-40.png" width="40"></a>
+                    <a href=""><img src="img/Icones/icons8-instagram-40.png" width="40"></a>
                 </li>
                 <li class="icon-footer">
-                    <a href=""><img src="img\Icones\icons8-twitter-96.png" width="45"></a>
+                    <a href=""><img src="img/Icones/icons8-twitter-96.png" width="45"></a>
                 </li>
             </ul>
         </div>

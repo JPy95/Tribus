@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <?php include_once('elementos\head.php')?>
-    <link rel="stylesheet" type="text/css" href="style\index\index.css">
+    <?php include_once('elementos/head.php')?>
+    <link rel="stylesheet" type="text/css" href="style/index/index.css">
   </head>
   <body>
     <!-- Navbar -->
-    <?php include_once('elementos\navbarIndex.php')?>
+    <?php include_once('elementos/navbarIndex.php')?>
 
     <!-- Conteudo -->
     <div class="conteudo-index">
         <div class="item-index" id="quemSomos">
-            <img src="img\Logo\Logo.png" width="200" height="200" class="img-index">
+            <img src="img/Logo/Logo.png" width="200" height="200" class="img-index">
             <div class="paragrafo-index">
                 <h5>Quem somos:</h5>
                 <p>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="item-index" id="comoFunciona">
-            <img src="img\teste.png" class="imglon-index img-index" style="display: none;" width="200" height="168">
+            <img src="img/teste.png" class="imglon-index img-index" style="display: none;" width="200" height="168">
             <div class="paragrafo-index">
                 <h5>Como funciona:</h5>
                 <p>                
@@ -38,20 +38,20 @@
                 <li>Será listado para o professor o resultado final com os grupos separados.</li>
                 </p>
             </div>
-            <img src="img\como-funciona.png" class="imgl-index img-index" width="200" height="168">
+            <img src="img/como-funciona.png" class="imgl-index img-index" width="200" height="168">
         </div>
         <div class="item-index" id="perfisComp">
             <div>
-                <img src="img\disc-comportamental.png" width="200" height="200" class="img-index">
+                <img src="img/disc-comportamental.png" width="200" height="200" class="img-index">
                 <!-- Conteudo 
-                <img src="img\aguia.png" width="100" height="84" class="img_comp-index">
-                <img src="img\gato.png" width="100" height="84" class="img_comp-index">
+                <img src="img/aguia.png" width="100" height="84" class="img_comp-index">
+                <img src="img/gato.png" width="100" height="84" class="img_comp-index">
                 -->
             </div>
             <div>
                 <!-- Conteudo 
-                <img src="img\tubarao.png" width="100" height="84" class="img_comp-index">
-                <img src="img\lobo.png" width="100" height="84" class="img_comp-index">
+                <img src="img/tubarao.png" width="100" height="84" class="img_comp-index">
+                <img src="img/lobo.png" width="100" height="84" class="img_comp-index">
                 -->
             </div>
             <div class="paragrafo-index"> <!-- Perfil Comportamental -->
@@ -124,7 +124,7 @@
    
         </div>
         <div class="item-index" style="border-bottom: none; padding-bottom: 0;" id="perfisProf">
-            <img src="img\perfil-profissional.png" width="200" height="200" class="img-index">
+            <img src="img/perfil-profissional.png" width="200" height="200" class="img-index">
             <div class="group_select-index">
        
         <!-- DropDown Area de Atuação -->            
@@ -164,6 +164,6 @@
     </div>
 
     <!-- Footer -->
-    <?php include_once('elementos\footer.php')?>
+    <?php include_once('elementos/footer.php')?>
   </body>
 </html>

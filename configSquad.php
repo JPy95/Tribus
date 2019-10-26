@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="pt-br">
     <head>
-        <?php include_once('elementos\head.php')?>
-        <link rel="stylesheet" type="text/css" href="style\managerSquad\managerSquad.css">
+        <?php include_once('elementos/head.php')?>
+        <link rel="stylesheet" type="text/css" href="style/managerSquad/managerSquad.css">
     </head>
     <body>
         <!-- Navbar -->
-        <?php include_once('elementos\navbar.php')?>
+        <?php include_once('elementos/navbar.php')?>
 
         <!-- Conteudo -->
         <h3>Perfil da Turma</h3>
@@ -15,13 +15,13 @@
                 <div>
                     <h5>Áreas de Atuações</h5>
                     <div class="areasTabela">
-                        <?php include_once('elementos\tableAtuacao.php')?>
+                        <?php include_once('elementos/tableAtuacao.php')?>
                     </div>
                 </div>
                 <div>
                     <h5>Perfil Comportamental</h5>
                     <div class="pieGraph">
-                        <?php include_once('elementos\pieGraph.php')?>
+                        <?php include_once('elementos/pieGraph.php')?>
                     </div>
                 </div>
             </div>
@@ -177,6 +177,6 @@
         </div>
 
         <!-- Footer -->
-        <?php include_once('elementos\footer.php')?>
+        <?php include_once('elementos/footer.php')?>
     </body>
 </html>
