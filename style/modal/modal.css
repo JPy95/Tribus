@@ -42,4 +42,9 @@ h6{
     .modal-tribus{
         width: 96%
     }
+
+    .input-modal{
+        margin: 0;
+        width: 100%;
+    }
 }

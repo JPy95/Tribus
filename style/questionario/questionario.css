@@ -46,14 +46,15 @@ h1{
 }
 
 .conjuto-perguntas{
-    width: 25%;
     margin-right: 10px;
+    width: 25%;
 }
 
 .label-resp{
-    font-size: 15px;
+    font-size: 13px;
     font-style: italic;
     padding-left: 5px;
+    width: 260px;
 }
 
 .input-radio{
@@ -67,6 +68,11 @@ label{
 .btn-quest{
     margin-top: 65px;
     margin-left: -80px;
+}
+
+.resp_perfil{
+    display: flex;
+    align-items: center;
 }
 
 @media only screen and (max-width: 600px){
