@@ -18,5 +18,5 @@
     $stmt = $con->prepare($query);
     $stmt->execute();
     
-    header("Location: ../../qrCodePage.php?projeto=".$projeto."&tema=".$tema);
+    header("Location: ../../qrCodePage.php?projeto=".$projeto."&tema=".$tema."&totalAlunos=".$qtdeAlunos);
 ?>

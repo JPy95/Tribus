@@ -9,7 +9,6 @@
 }
 
 .qrCode{
-    border-right: 2px solid #0000001a;
     padding-right: 5px;
 }
 
@@ -61,6 +60,9 @@ h1{
     text-align: center;
 }
 
+.img-mobile{
+    width: 100%;
+}
 
 @media only screen and (max-width: 600px){
 
