@@ -10,7 +10,7 @@
             }, 5000);
         </script>
     </head>
-    <body onload="submmit()">
+    <body>
         <form action="php/servicos/_qrCode.php" method="post" id="projeto">
             <input type="hidden" name="projeto" value="<?php echo $_GET['projeto']?>">
             <input type="hidden" name="tema" value="<?php echo $_GET['tema']?>">

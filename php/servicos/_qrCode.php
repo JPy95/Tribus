@@ -20,7 +20,7 @@
     
     //Verifica quantidade de Alunos
     if($qtdeAlunos == $totalAlunos){
-        header("Location: ../../configSquad.php");
+        header("Location: ../../biuldSquad.php?projeto=".$projeto."&qtde=".$totalAlunos);
     } else{
         header("Location: ../../qrCodePage.php?projeto=".$projeto."&tema=".$tema."&qtdeAlunos=".$qtdeAlunos."&totalAlunos=".$totalAlunos);
     }  
