@@ -5,8 +5,8 @@
     $conexao = new Conexao();
     $con = $conexao->conectar();
 
-    $qtdAlunos = $_POST['qtde'];
-    $projeto = $_POST['projeto'];
+    $qtdAlunos = 23;
+    $projeto = 0;
     $qtdeGrupos = $qtdAlunos-1;
 
     //quantidade de grupos
@@ -18,7 +18,8 @@
     if($qtdAlunos%$qtdeGrupos==0){
         $qtdeAlunoGrupo = $qtdAlunos/$qtdeGrupos;
     } else {
-        $qtdeAlunoGrupo = intval($qtdAlunos/$qtdeGrupos)+1;
+        $qtdeAlunoGrupo = intval($qtdAlunos/$qtdeGrupos)+2;
+        $qtdeGrupos--;
     }
     
     //Buscando perfil da sala
@@ -29,6 +30,7 @@
     while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
         if(intval(intval($row->qtde)/$qtdeGrupos) > 0){
             $predominante[$row->perfil] = intval(intval($row->qtde)/$qtdeGrupos);//Quantidade Perfil Predominante
+            //$profilesPredominantes[$row->perfil] = 0;
             $qtdePredominante += intval(intval($row->qtde)/$qtdeGrupos);
         }
     }
@@ -37,14 +39,15 @@
     $query = "select nome, atuacao, perfil from alunos where projeto = 62336";
     $stmt = $con->prepare($query);
     $stmt->execute();
-    $result = $stmt->fetchAll();   
+    $result = $stmt->fetchAll();  
     
     $grupos = [];
 
     for($i=0;$i<$qtdeGrupos;$i++){
 
         //Inicia variaveis
-        $profiles = [];
+        $profilesPredominantes = $predominante;
+        $profilesNaoPredominantes = [];
         $alunos = [];
         $controle = 0;
 
@@ -57,18 +60,21 @@
             $profile = $result[$j]["perfil"];
 
             if(count($alunos) < $qtdeAlunoGrupo){
-                if(array_key_exists($profile, $predominante) && $controle < $predominante[$profile]){
+                if(array_key_exists($profile, $predominante) && $profilesPredominantes[$profile] > 0){
                     //Adiciona dados do aluno em uma array
                     array_push($alunos, array($result[$j][0],$result[$j][1],$result[$j][2]));
+                    //Adicionar perfil predominante que entrou
+                    $profilesPredominantes[$result[$j][2]] -= 1;
                     //Remove aluno do result
                     unset($result[$j]);
                     //Incrmenta de qtdeAlunos
                     $controle++;
-                } elseif(count($profiles) < ($qtdeAlunoGrupo-$qtdePredominante)){
+
+                } elseif(count($profilesNaoPredominantes) < ($qtdeAlunoGrupo-$qtdePredominante)){
                     //Adiciona dados do aluno em uma array
                     array_push($alunos, array($result[$j][0],$result[$j][1],$result[$j][2]));
                     //Incrmenta de qtdeAlunos
-                    array_push($profiles, $profile);
+                    array_push($profilesNaoPredominantes, $profile);
                     //Remove aluno do result
                     unset($result[$j]);
                 }
@@ -76,7 +82,7 @@
         }
         //Insere alunos no grupo
         array_push($grupos,$alunos);
-        //var_dump($profiles);
+        //var_dump($alunos);
     }
 
     var_dump($grupos);
