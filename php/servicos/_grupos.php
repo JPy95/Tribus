@@ -1,89 +1,83 @@
 <?php
 
     include_once('../Conexao/Conexao.php');
+    include_once('../logica.php');
     $conexao = new Conexao();
     $con = $conexao->conectar();
 
     $qtdAlunos = $_POST['qtde'];
     $projeto = $_POST['projeto'];
-
-    /*
-        Quantidade de Grupos
-
-        Criterios:
-        -Quantidade de alunos por grupo 4 a 8 alunos;
-    */
     $qtdeGrupos = $qtdAlunos-1;
-    $controle = false;
 
-    while($controle==false){
-        if($qtdAlunos%$qtdeGrupos==0){
-            if($qtdAlunos/$qtdeGrupos >= 4){
-                $controle = true;
-            } else {
-                $qtdeGrupos--;
-            }
-        } else {
-            $qtdeGrupos--;
-            if($qtdeGrupos==0){
-                //qtde min para um grupo seria 4 pessoas.
-                $controle==true;
-            }
+    //quantidade de grupos
+    while($qtdAlunos/$qtdeGrupos < 4){
+        $qtdeGrupos--;
+    }
+
+    //quantidade de alunos
+    if($qtdAlunos%$qtdeGrupos==0){
+        $qtdeAlunoGrupo = $qtdAlunos/$qtdeGrupos;
+    } else {
+        $qtdeAlunoGrupo = intval($qtdAlunos/$qtdeGrupos)+1;
+    }
+    
+    //Buscando perfil da sala
+    $query = "select perfil, count(*) as qtde from alunos where projeto = 62336 group by perfil";
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+    $qtdePredominante = 0;
+    while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
+        if(intval(intval($row->qtde)/$qtdeGrupos) > 0){
+            $predominante[$row->perfil] = intval(intval($row->qtde)/$qtdeGrupos);//Quantidade Perfil Predominante
+            $qtdePredominante += intval(intval($row->qtde)/$qtdeGrupos);
         }
     }
 
-
     //Buscando dados dos alunos
-    $query = "select idAulno, nome, atuacao, perfil from alunos where projeto = 62336";
+    $query = "select nome, atuacao, perfil from alunos where projeto = 62336";
     $stmt = $con->prepare($query);
     $stmt->execute();
-    $result = $stmt->fetchAll();
-
-    $alunos = [];
+    $result = $stmt->fetchAll();   
+    
     $grupos = [];
-    $qtdeAlunoGrupo = $qtdAlunos/$qtdeGrupos;
 
     for($i=0;$i<$qtdeGrupos;$i++){
-        
-        //Zera array perfil a cada vez que mudar o grupo
-        $perfil = [];
+
+        //Inicia variaveis
+        $profiles = [];
+        $alunos = [];
+        $controle = 0;
 
         //reordena o array
         $result = array_values($result);
         $qtdAlunos = count($result);
+
         for($j=0;$j<$qtdAlunos;$j++){
 
-            if((!in_array($result[$j][3],$perfil)) && count($perfil) < $qtdeAlunoGrupo){
+            $profile = $result[$j]["perfil"];
 
-                //Adiciona dados do aluno em uma array
-                array_push($alunos, array($result[$j][1],$result[$j][2],$result[$j][3]));
-                //Remove aluno do result
-                unset($result[$j]);
-                
-                //Insere perfil do aluno para controle
-                array_push($perfil,$alunos[0][2]);
-    
-            } elseif(count($perfil)==3){
-                $perfil = [];
+            if(count($alunos) < $qtdeAlunoGrupo){
+                if(array_key_exists($profile, $predominante) && $controle < $predominante[$profile]){
+                    //Adiciona dados do aluno em uma array
+                    array_push($alunos, array($result[$j][0],$result[$j][1],$result[$j][2]));
+                    //Remove aluno do result
+                    unset($result[$j]);
+                    //Incrmenta de qtdeAlunos
+                    $controle++;
+                } elseif(count($profiles) < ($qtdeAlunoGrupo-$qtdePredominante)){
+                    //Adiciona dados do aluno em uma array
+                    array_push($alunos, array($result[$j][0],$result[$j][1],$result[$j][2]));
+                    //Incrmenta de qtdeAlunos
+                    array_push($profiles, $profile);
+                    //Remove aluno do result
+                    unset($result[$j]);
+                }
             }
         }
-        
         //Insere alunos no grupo
         array_push($grupos,$alunos);
-        //Zera o array com os dados do aluno
-        $alunos = [];
+        //var_dump($profiles);
     }
-    //var_dump($grupos[0]);
-    var_dump($grupos[2]);
 
-    //array_push($alunos, array($result[0][1],$result[0][2],$result[0][3]));
-    //array_push($alunos, array($result[1][1],$result[1][2],$result[1][3]));
-    //array_push($grupos,$alunos);
-    //array_push($perfil,$alunos[0][2], $alunos[1][2]);
-    //var_dump($result[0][3]);
-
-    //var_dump(in_array("Comunicador", $alunos[0]));
-    //var_dump($alunos);
-    //var_dump($alunos[0][2]);
-    //var_dump($result[0][0],$result[0][1],$result[0][2],$result[0][3]);
+    var_dump($grupos);
 ?>
