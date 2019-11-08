@@ -54,10 +54,6 @@ select{
     color: #0000008a;
     border-radius: 5px;
     border: 1px solid #0000001a;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background: url('../../img/Icones/icons8-seta-para-expandir-52 (1).png') 95.5% 50% no-repeat;
     background-size: 17px;
     background-position-x: 97%;
     background-position-y: 50%;
