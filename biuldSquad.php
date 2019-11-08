@@ -7,7 +7,7 @@
   <body onload="document.getElementById('grupos').submit();">
     <form id="grupos" action="php/servicos/_grupos.php" method="post">
         <input type="hidden" name="projeto" value="<?php echo $_GET['projeto']?>">
-        <input type="hidden" name="qtde" value="<?php echo $_GET['qtde']?>">
+        <input type="hidden" name="qtdeAlunos" value="<?php echo $_GET['qtdeAlunos']?>">
     </form>
     <div style="display: flex;justify-content: center;margin-top: 125px;">
         <img src="img/Logo/logoGif.gif" style="width: 25%;">
