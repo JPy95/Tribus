@@ -21,7 +21,37 @@
   
   
   //Biuld Tables
-  
+  $controle = 0;
+  for($i=0;$i<$qtdGroups;$i++){
+    if($controle<1){
+      echo '<div class="groups">';
+    }
+    echo '<div class="tables">';
+    echo '<span>Grupo '.($i+1).'</span>';
+    echo '<table class="table-squad">';
+    echo '<tr>
+            <th class="th-squad">Nome</th>
+            <th class="th-squad">Área</th>
+            <th class="th-squad">Perfil</th>
+          </tr>';
+    for($j=0;$j<$qtdStudents;$j++){
+      if(($i+1) == $student[$j]["grupo"]){
+        echo '
+          <tr>
+            <td class="td-squad">'.$student[$j]["aluno"].'</td>
+            <td class="td-squad">'.$student[$j]["atuacao"].'</td>
+            <td class="td-squad">'.$student[$j]["perfil"].'</td>
+          </tr>';
+      }
+    }
+    echo '</table>';
+    echo '</div>';
+    $controle++;
+    if($controle==2){
+      $controle=0;
+      echo '</div>';
+    }
+  }
 
 
 
@@ -29,8 +59,7 @@
 
 
 
-
-
+/*
   //Build tables
   for($i=0;$i<$qtdGroups;$i++){
     echo '<div>';
@@ -53,5 +82,5 @@
     }
     echo '</table>';
     echo '</div>';
-  }
+  }*/
 ?>

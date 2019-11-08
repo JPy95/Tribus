@@ -24,5 +24,4 @@
     } else {
         //header("Location: ../../index.php?result=false");
     }
-    var_dump($gourp->biuldGroups());
 ?>

@@ -39,14 +39,14 @@
     }
 
     public function ClassroomProfile(){
-      $query = "select perfil, count(*) as qtde from aux where projeto =".$this->project." group by perfil";
+      $query = "select perfil, count(*) as qtde from alunos where projeto =".$this->project." group by perfil";
       $stmt = $this->conection->prepare($query);
       $stmt->execute();
-
+      
       while ($row = $stmt->fetch(PDO::FETCH_OBJ)) {
         if(intval(intval($row->qtde)/$this->qtdGroup) > 0){
           $this->predominant[$row->perfil] = intval(intval($row->qtde)/$this->qtdGroup);//Quantidade Perfil Predominante
-          $this->qtdPredominant += intval(intval($row->qtde)/$this->qtdeGrupos);
+          $this->qtdPredominant += intval(intval($row->qtde)/$this->qtdGroup);
         }
       }
     }
@@ -54,39 +54,44 @@
     public function biuldGroups(){
 
       for($i=0;$i<$this->qtdGroup;$i++){
-
+        
         //Inicia variaveis
         $profilesPredominants = $this->predominant;
         $profilesNotPredominants = [];
-        $aux = [];//antigo aluno
+        $aux = 0;//antigo aluno
 
         //reordena o array
         $this->student = array_values($this->student);
         $this->qtdStudent = count($this->student);
 
         for($j=0;$j<$this->qtdStudent;$j++){
+          
+          $profile = $this->student[$j][3];
 
-          $profile = $this->student[$j][2];
-
-          if(count($aux) < $this->qtdStudentGroup){
+          if($aux < $this->qtdStudentGroup){
             if(array_key_exists($profile, $this->predominant) && $profilesPredominants[$profile] > 0){
+              //insere no banco
               $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
               $stmt = $this->conection->prepare($query);
               $stmt->execute();
-
               //Adicionar perfil predominante que entrou
-              $profilesPredominantes[$this->student[$j][2]] -= 1;
+              $profilesPredominants[$this->student[$j][3]] -= 1;
               //Remove aluno do result
               unset($this->student[$j]);
+              //incrementa aux
+              $aux++;
+
             } elseif(count($profilesNotPredominants) < ($this->qtdStudentGroup-$this->qtdPredominant)){
               $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
               $stmt = $this->conection->prepare($query);
               $stmt->execute();
-
               //Incrmenta de qtdeAlunos
               array_push($profilesNotPredominants, $profile);
               //Remove aluno do result
               unset($this->student[$j]);
+              //incrementa aux
+              $aux++;
+
             }
           }
         }

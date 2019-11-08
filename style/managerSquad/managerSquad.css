@@ -15,6 +15,24 @@
     display: flex;
     justify-content: center;
 }
+.squads{
+    width: 100%;
+    display: inline-block;
+}
+.group-squad{
+    margin: 0 45px;
+}
+
+.groups{
+    display: flex;
+}
+
+.tables{
+    width: 330px;
+    margin: 10px 10px;
+}
+
+
 
 table{
     width: 70%;
@@ -40,34 +58,19 @@ th{
 tr:nth-child(even) {
     background-color: #0000000a;
 }
-
 h5{
     font-size: 1.25rem;
     border-bottom: 1px solid #0000001a;
     padding-bottom: 3px;
     margin: 0px 20px 15px 20px;
 }
-
-.squads{
-    width: 745px;
-    display: inline-block;
-}
-
-.squad{
-    width: 100%;
-    margin-left: 40px;
-}
-
-.group-squad{
-}
-
 .table-squad{
     width: 100%;
 }
-
 .th-squad{
     font-size: 13px;
     padding: 2px;
+    width: 110px;
 }
 
 .td-squad{
@@ -76,9 +79,8 @@ h5{
 }
 
 span{
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
-    font-style: italic;
 }
 
 h3{
