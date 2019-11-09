@@ -22,16 +22,11 @@
     $resp['planejador'] = $resp['planejador']*4;
     $resp['executor'] = $resp['executor']*4;
 
-    //inserindo questionaro no bd
-    $query = "INSERT INTO questionario VALUES (".$idQuestionario.",".$idAluno.",".$resp['analista'].", ".$resp['comunicador'].",".$resp['planejador'].",".$resp['executor'].",".$projeto.")";
-    $stmt = $con->prepare($query);
-    $stmt->execute();
-
     //buscando o pefil predominante do aluno
     $perfil = array_search(max($resp), $resp);
 
     //atualizando dados do aluno
-    $query = "UPDATE alunos SET perfil = '".$perfil."', idQuestionario=".$idQuestionario." WHERE idAulno=".$idAluno;
+    $query = "UPDATE alunos SET perfil = '".$perfil."' WHERE idtAluno=".$idAluno;
     $stmt = $con->prepare($query);
     $stmt->execute();
 

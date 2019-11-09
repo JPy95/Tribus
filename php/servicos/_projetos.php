@@ -10,13 +10,13 @@
     $curso = $_POST['curso'];
     $unidade = $_POST['unidade'];
     $turno = $_POST['turno'];
-    $qtdeAlunos = $_POST['qtdeAlunos'];
+    $totalAlunos = $_POST['qtdeAlunos'];
     
     //Inserindo dados no Banco
-    $query="INSERT INTO projeto VALUES(".$projeto.",'".$tema."','".$curso."','".$unidade."','".$turno."',".$qtdeAlunos.")";
+    $query="INSERT INTO projeto VALUES(null,'".$tema."','".$curso."','".$unidade."','".$turno."',".$totalAlunos.",".$projeto.")";
     $con = $conexao->conectar();
     $stmt = $con->prepare($query);
     $stmt->execute();
     
-    header("Location: ../../qrCodePage.php?projeto=".$projeto."&tema=".$tema."&totalAlunos=".$qtdeAlunos);
+    header("Location: ../../qrCodePage.php?projeto=".$projeto."&tema=".$tema."&totalAlunos=".$totalAlunos);
 ?>
