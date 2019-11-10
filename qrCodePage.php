@@ -7,7 +7,7 @@
         <script>
             setTimeout(function() {
                 document.getElementById("projeto").submit();;
-            }, 5000);
+            }, 500000000);
         </script>
     </head>
     <body>
@@ -34,13 +34,15 @@
                 </div>
                 <div class="resumoQrcode">
                     <span>Código do Projeto: </span><label><?php echo $_GET['projeto']?></label><br>
-                    <span>Restam </span><label><?php 
+                    <span>Restam responder </span><label><?php 
                         if(!isset($_GET['qtdeAlunos'])){
                             echo $_GET['totalAlunos'];
                         } else{
                             echo $_GET['qtdeAlunos'];
-                        }?></label><span> alunos.</span> <br>
+                        }?></label><span> alunos.</span><br>
                 </div>
+                <span style="font-size: 20px;margin-right: 10px;">Acesse o questionário com: </span>
+                <span style="font-size: 20px;font-weight: 700;color: black;">bit.do/tribus</span>
             </div>
         </div>
     </body>
