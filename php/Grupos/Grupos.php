@@ -10,7 +10,7 @@
     private $qtdGroup;
     private $qtdPredominant = 0;
     private $predominant = [];
-    private $grupos = [];
+    private $groups = [];
     
 
 
@@ -21,16 +21,18 @@
       $this->qtdGroup = $qtdStudent-1;
       $this->conection = $conection;
       $this->findBestQtdGroup();
-      $this->ClassroomProfile();
+      //$this->ClassroomProfile();
     }
 
 
     public function findBestQtdGroup(){
-
       while($this->qtdStudent/$this->qtdGroup < 4){
         $this->qtdGroup--; 
       }
-      if($this->qtdStudent%$this->qtdGroup==0){
+
+      if($this->qtdStudent <= 14){
+        $this->qtdStudentGroup = intval($this->qtdStudent/$this->qtdGroup)+1;
+      } elseif($this->qtdStudent%$this->qtdGroup==0){
         $this->qtdStudentGroup = $this->qtdStudent/$this->qtdGroup;
       } else {
         $this->qtdStudentGroup = intval($this->qtdStudent/$this->qtdGroup)+2;
@@ -52,50 +54,64 @@
     }
 
     public function biuldGroups(){
-
-      for($i=0;$i<$this->qtdGroup;$i++){
-        
-        //Inicia variaveis
-        $profilesPredominants = $this->predominant;
-        $profilesNotPredominants = [];
-        $aux = 0;//antigo aluno
-
-        //reordena o array
-        $this->student = array_values($this->student);
-        $this->qtdStudent = count($this->student);
-
-        for($j=0;$j<$this->qtdStudent;$j++){
+      while(count($this->student)>0){
+        $this->ClassroomProfile();
+        for($i=0;$i<$this->qtdGroup;$i++){
           
-          $profile = $this->student[$j][3];
-
-          if($aux < $this->qtdStudentGroup){
-            if(array_key_exists($profile, $this->predominant) && $profilesPredominants[$profile] > 0){
-              //insere no banco
-              $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
-              $stmt = $this->conection->prepare($query);
-              $stmt->execute();
-              //Adicionar perfil predominante que entrou
-              $profilesPredominants[$this->student[$j][3]] -= 1;
-              //Remove aluno do result
-              unset($this->student[$j]);
-              //incrementa aux
-              $aux++;
-
-            } elseif(count($profilesNotPredominants) < ($this->qtdStudentGroup-$this->qtdPredominant)){
-              $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
-              $stmt = $this->conection->prepare($query);
-              $stmt->execute();
-              //Incrmenta de qtdeAlunos
-              array_push($profilesNotPredominants, $profile);
-              //Remove aluno do result
-              unset($this->student[$j]);
-              //incrementa aux
-              $aux++;
-
+          //Inicia variaveis
+          $profilesPredominants = $this->predominant;
+          $profilesNotPredominants = [];
+          $aux = [];//antigo aluno
+  
+          //reordena o array
+          $this->student = array_values($this->student);
+          $this->qtdStudent = count($this->student);
+  
+          for($j=0;$j<$this->qtdStudent;$j++){
+            
+            $profile = $this->student[$j][3];
+  
+            if(count($aux) < $this->qtdStudentGroup){
+              if(array_key_exists($profile, $this->predominant) && $profilesPredominants[$profile] > 0 && (count($this->groups[$i]) + count($aux) ) < $this->qtdStudentGroup){
+                //insere no banco
+                $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
+                $stmt = $this->conection->prepare($query);
+                $stmt->execute();
+                //Adicionar perfil predominante que entrou
+                $profilesPredominants[$this->student[$j][3]] -= 1;
+                //Remove aluno do result
+                unset($this->student[$j]);
+                //incrementa aux
+                array_push($aux, $profile);
+  
+              } elseif(count($profilesNotPredominants) < ($this->qtdStudentGroup-$this->qtdPredominant) && !in_array($profile, $aux) && (count($this->groups[$i])+count($aux)) < $this->qtdStudentGroup){
+                $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
+                $stmt = $this->conection->prepare($query);
+                $stmt->execute();
+                //Incrmenta de qtdeAlunos
+                array_push($profilesNotPredominants, $profile);
+                //Remove aluno do result
+                unset($this->student[$j]);
+                //incrementa aux
+                array_push($aux, $profile);
+  
+              } /*elseif(count($profilesNotPredominants) < ($this->qtdStudentGroup-$this->qtdPredominant)){
+                $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
+                $stmt = $this->conection->prepare($query);
+                $stmt->execute();
+                //Incrmenta de qtdeAlunos
+                array_push($profilesNotPredominants, $profile);
+                //Remove aluno do result
+                unset($this->student[$j]);
+                //incrementa aux
+                array_push($aux, $profile);*/
+              //}
             }
           }
+          $this->groups[$i] = $aux;
         }
       }
+      
       if(count($this->student)==0){
         return true;
       } else {
