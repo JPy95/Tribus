@@ -34,12 +34,12 @@
                 </div>
                 <div class="resumoQrcode">
                     <span>Código do Projeto: </span><label><?php echo $_GET['projeto']?></label><br>
-                    <span>Quantidade de Alunos: </span><label><?php 
+                    <span>Restam </span><label><?php 
                         if(!isset($_GET['qtdeAlunos'])){
-                            echo 0;
+                            echo $_GET['totalAlunos'];
                         } else{
                             echo $_GET['qtdeAlunos'];
-                        }?></label><br>
+                        }?></label><span> alunos.</span> <br>
                 </div>
             </div>
         </div>

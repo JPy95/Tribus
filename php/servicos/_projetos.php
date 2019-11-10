@@ -5,7 +5,7 @@
     $conexao = new Conexao();
 
     //Variaveis
-    $projeto = rand(10000, 99999);
+    $projeto = mt_rand(0, 99999);
     $tema = $_POST['tema'];
     $curso = $_POST['curso'];
     $unidade = $_POST['unidade'];

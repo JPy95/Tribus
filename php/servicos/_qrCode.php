@@ -14,12 +14,12 @@
     $stmt = $con->prepare($query);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_OBJ);
-    $qtdeAlunos = $row->qtde;
+    $qtdeAlunos = $totalAlunos - $row->qtde;
 
 
     
     //Verifica quantidade de Alunos
-    if($qtdeAlunos == $totalAlunos){
+    if($qtdeAlunos == 0){
         header("Location: ../../biuldSquad.php?projeto=".$projeto."&qtdeAlunos=".$qtdeAlunos);
     } else{
         header("Location: ../../qrCodePage.php?projeto=".$projeto."&tema=".$tema."&qtdeAlunos=".$qtdeAlunos."&totalAlunos=".$totalAlunos);

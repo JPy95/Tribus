@@ -4,16 +4,25 @@
     $conexao = new Conexao();
 
     //Variaveis
+    $dataInclusão = date("Y-m-d H:i:s");
+    $idtAluno = mt_rand(0, 999999);
     $name = $_POST['nome'];
     $projeto = $_POST['projeto'];
     $atuacao = $_POST['atuacao'];
 
     //inserindo aluno no bd
-    $query = "INSERT INTO alunos VALUES(now(),null,'".$name."',".$projeto.",'".$atuacao."',null,".$idAluno.")";
-    echo $query;
+    $query = "INSERT INTO alunos VALUES('".$dataInclusão."',null,'".$name."',".$projeto.",'".$atuacao."',null,".$idtAluno.")";
     $con = $conexao->conectar();
     $stmt = $con->prepare($query);
     $stmt->execute();
 
-    header("Location: ../../questionario.php?projeto=".$projeto."&idAluno=".$idAluno);
+
+    //Busca idAluno
+    $query = "select idAluno from alunos where dtaInclusao = '".$dataInclusão."' and idtAluno = ".$idtAluno;
+    $con = $conexao->conectar();
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+    $idAluno = intval($stmt->fetch(PDO::FETCH_OBJ)->idAluno);
+
+    header("Location: ../../questionario.php?aluno=true&projeto=".$projeto."&idAluno=".$idAluno);
 ?>

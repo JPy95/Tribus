@@ -15,7 +15,7 @@
             <h1>Questionário de Perfil Comportamental</h1>
             <form action="php/servicos/_questionario.php" method="post" class="form-quest">
                 <?php include_once('elementos/quest.php')?> 
-                <input type="hidden" name="idaluno" value="<?php echo $_GET['idAluno']?>">
+                <input type="hidden" name="idAluno" value="<?php echo $_GET['idAluno']?>">
                 <input type="hidden" name="projeto" value="<?php echo $_GET['projeto']?>">
             </form>
         </div>
