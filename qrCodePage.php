@@ -7,7 +7,7 @@
         <script>
             setTimeout(function() {
                 document.getElementById("projeto").submit();;
-            }, 500000000);
+            }, 5000);
         </script>
     </head>
     <body>
@@ -25,7 +25,7 @@
                 <div class="qrCode">
                     <?php
                         $aux = 'qrCode/php/qr_img.php?';
-                        $aux .= 'd=tribusgroup.hostingerapp.com/questionario.php?projeto='.$_GET['projeto'].'&';
+                        $aux .= 'd=tribusgroup.hostingerapp.com/startQuiz.php?projeto='.$_GET['projeto'].'&';
                         $aux .= 'e=H&';
                         $aux .= 's=10&';
                         $aux .= 't=J';
@@ -42,7 +42,7 @@
                         }?></label><span> alunos.</span><br>
                 </div>
                 <span style="font-size: 20px;margin-right: 10px;">Acesse o questionário com: </span>
-                <span style="font-size: 20px;font-weight: 700;color: black;">bit.do/tribus</span>
+                <span style="font-size: 20px;font-weight: 700;color: black;">bit.do/tribusQuiz</span>
             </div>
         </div>
     </body>
