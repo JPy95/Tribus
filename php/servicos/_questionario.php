@@ -4,25 +4,19 @@
     $conexao = new Conexao();
     $con = $conexao->conectar();
 
-    $idAluno = $_POST['idAluno'];
+    $result = explode(",", $_POST['result']);
     $projeto = $_POST['projeto'];
+    $idAluno = $_POST['aluno'];
 
-    $resp = array(  $_POST['1q'],$_POST['2q'],$_POST['3q'],$_POST['4q'],$_POST['5q'],
-                    $_POST['6q'],$_POST['7q'],$_POST['8q'],$_POST['9q'],$_POST['10q'],
-                    $_POST['11q'],$_POST['12q'],$_POST['13q'],$_POST['14q'],$_POST['15q'],
-                    $_POST['16q'],$_POST['17q'],$_POST['18q'],$_POST['19q'],$_POST['20q'],
-                    $_POST['21q'],$_POST['22q'],$_POST['23q'],$_POST['24q'],$_POST['25q'],
-    );
+    $result = array_count_values($result);
 
-    $resp = array_count_values($resp);
-
-    $resp['analista'] =  $resp['analista']*4;
-    $resp['comunicador'] = $resp['comunicador']*4;
-    $resp['planejador'] = $resp['planejador']*4;
-    $resp['executor'] = $resp['executor']*4;
+    $result['Analista'] =  $result['Analista']*4;
+    $result['Comunicador'] = $result['Comunicador']*4;
+    $result['Planejador'] = $result['Planejador']*4;
+    $result['Executor'] = $result['Executor']*4;
 
     //buscando o pefil predominante do aluno
-    $perfil = array_search(max($resp), $resp);
+    $perfil = array_search(max($result), $result);
 
     //atualizando dados do aluno
     $query = "UPDATE alunos SET perfil = '".$perfil."' WHERE idAluno=".$idAluno;

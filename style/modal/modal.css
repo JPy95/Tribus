@@ -24,7 +24,7 @@ h6{
 }
 
 .label-modal{
-    font-size: 14px;
+    font-size: 16px;
     font-style: italic;
 }
 
@@ -45,6 +45,7 @@ h6{
 
     .input-modal{
         margin: 0;
+        margin-bottom: 10px;
         width: 100%;
     }
 }

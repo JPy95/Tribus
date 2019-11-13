@@ -8,7 +8,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <div class="mr-3 ml-3 btn-collapse">
-            <a href="questionario.php" class="navbar-buttons">Entrar em Projeto</a>
+            <a href="startQuiz.php" class="navbar-buttons">Quiz Comportamental</a>
             <a href="projeto.php" class="navbar-buttons">Criar Projeto</a>
         </div>
         <ul class="navbar-nav">

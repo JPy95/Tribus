@@ -24,5 +24,5 @@
     $stmt->execute();
     $idAluno = intval($stmt->fetch(PDO::FETCH_OBJ)->idAluno);
 
-    header("Location: ../../questionario.php?aluno=true&projeto=".$projeto."&idAluno=".$idAluno);
+    header("Location: ../../questionario.php?projeto=".$projeto."&idAluno=".$idAluno);
 ?>
