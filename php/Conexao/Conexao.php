@@ -17,10 +17,10 @@ class Conexao
     
     private function configuraDados()
     {
-        $this->bd = 'u812860292_tribusdb';
-        $this->host = 'auth-db248.hostinger.com';
-        $this->usuario = 'u812860292_tribus';
-        $this->senha = 'Unibh@2019';
+        $this->bd = '3220136_tribusdb';
+        $this->host = 'fdb16.awardspace.net';
+        $this->usuario = '3220136_tribusdb';
+        $this->senha = 'unibh2019';
     }
 
     function __construct()

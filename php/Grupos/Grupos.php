@@ -72,7 +72,7 @@
             $profile = $this->student[$j][3];
   
             if(count($aux) < $this->qtdStudentGroup){
-              if(array_key_exists($profile, $this->predominant) && $profilesPredominants[$profile] > 0 && (count($this->groups[$i]) + count($aux) ) < $this->qtdStudentGroup){
+              if(array_key_exists($profile, $this->predominant) && $profilesPredominants[$profile] > 0 && (count($aux) < $this->qtdStudentGroup)){
                 //insere no banco
                 $query = "insert into grupos values (".($i+1).",".$this->project.", ".$this->student[$j][0].",'".$this->student[$j][1]."','".$this->student[$j][2]."','".$this->student[$j][3]."')";
                 $stmt = $this->conection->prepare($query);
@@ -108,7 +108,6 @@
               //}
             }
           }
-          $this->groups[$i] = $aux;
         }
       }
       

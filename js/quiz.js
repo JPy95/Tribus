@@ -246,7 +246,7 @@
   
   // Displays next requested element
   function displayNext() {
-    jQuery(quiz).fadeOut(function() {
+    quiz.fadeOut(function() {
       $('#question').remove();
       
       if(questionCounter < questions.length){
@@ -257,14 +257,12 @@
         }
       }else {
         var projeto = window.location.search.substring(1).split('&')[0].split('=')[1];
-        var aluno = window.location.search.substring(1).split('&')[1].split('=')[1]
+        var aluno = window.location.search.substring(1).split('&')[1].split('=')[1];
         $.ajax({
           data: 'result='+selections+'&projeto='+projeto+'&aluno='+aluno,
           url: 'php/servicos/_questionario.php?',
           method: 'POST', // or GET
-          success: function(msg) {
-              alert(msg);
-          }
+          success: window.location.replace("index.php"),
         });
         $('#next').hide();
       }

@@ -6,8 +6,6 @@
     <link rel="stylesheet" type="text/css" href="style/modal/modal.css">
   </head>
   <body>
-    <!-- Modal -->
-    <?php include_once('elementos/modal.php')?> 
     <!-- Conteudo -->
     <div id='container'>
       <div id='quiz'></div>

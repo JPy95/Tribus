@@ -25,7 +25,7 @@
                 <div class="qrCode">
                     <?php
                         $aux = 'qrCode/php/qr_img.php?';
-                        $aux .= 'd=tribusgroup.hostingerapp.com/startQuiz.php?projeto='.$_GET['projeto'].'&';
+                        $aux .= 'd=tribus.dx.am/startQuiz.php?projeto='.$_GET['projeto'].'&';
                         $aux .= 'e=H&';
                         $aux .= 's=10&';
                         $aux .= 't=J';
@@ -41,8 +41,8 @@
                             echo $_GET['qtdeAlunos'];
                         }?></label><span> alunos.</span><br>
                 </div>
-                <span style="font-size: 20px;margin-right: 10px;">Acesse o questionário com: </span>
-                <span style="font-size: 20px;font-weight: 700;color: black;">bit.do/tribusQuiz</span>
+                <span style="font-size: 20px;margin-right: 10px;">Acesse o Quiz com: </span>
+                <label style="font-size: 20px;font-weight: 700;color: black;">bit.do/tribusQuiz</label>
             </div>
         </div>
     </body>
