@@ -18,12 +18,10 @@
     //buscando o pefil predominante do aluno
     $perfil = array_search(max($result), $result);
 
-    print()
-
     //atualizando dados do aluno
     $query = "UPDATE alunos SET perfil = '".$perfil."' WHERE idAluno=".$idAluno;
     $stmt = $con->prepare($query);
     $stmt->execute();
 
-    header("Location: ../../resultQuiz.php?result=".$result."&perfil=".$perfil);
+    //header("Location: ../../resultQuiz.php?result=".$result."&perfil=".$perfil);
 ?>

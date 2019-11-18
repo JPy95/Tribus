@@ -18,7 +18,5 @@
 
     if($gourp->biuldGroups()){
         header("Location: ../../configSquad.php?project=".$project);
-    } else {
-        //header("Location: ../../index.php?result=false");
-    }
+    } 
 ?>

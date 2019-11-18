@@ -57,7 +57,7 @@
                         </div>
                         <div style="margin-right: 15px; width: 200px;">
                             <label for="qtdeAlunos">Quantidade de Alunos:</label><br>
-                            <input type="number" name="qtdeAlunos" id="qtdeAlunos" max="100" min="0">
+                            <input type="number" name="qtdeAlunos" id="qtdeAlunos" max="100" min="4">
                         </div>
                     </div>                    
                     <div class="btn-projeto">
