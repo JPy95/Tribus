@@ -15,6 +15,5 @@
   $row = $stmt->fetch(PDO::FETCH_OBJ);
 
   $restante = $row->qtdeAlunos - $row->qtdRestante;
-
   echo $restante;
 ?>
