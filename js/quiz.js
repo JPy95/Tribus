@@ -160,15 +160,7 @@
               'Duas cabeças pensam melhor do que uma ', 
               ' É preferível olhar, antes de pular ', 
               'Se você não tem condições de competir,não compita '],
-  }
-  , {
-    question: "Eu me divirto quando",
-    choices: ['Tenho novidades', 
-              'Estou com os outros', 
-              'Determino as regras', 
-              'Estou me exercitando'],
-  }
-  ];
+  }];
   
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
@@ -189,7 +181,6 @@
     }    
     // If no user selection, progress is stopped
     if (choose()) {
-      
       questionCounter++;
       displayNext();
     } 

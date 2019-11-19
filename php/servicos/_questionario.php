@@ -17,7 +17,7 @@
     $result['Executor'] = $result['Executor']*4;
 
     //insere perfil comportamental no banco
-    $query="INSERT INTO perfil VALUES('".$dataInclusão."',NULL,".$idAluno.",".$projeto.",".$result['Analista'].",".$result['Comunicador'].", ".$result['Planejador'].", ".$result['Executor'].")"
+    $query="INSERT INTO perfil VALUES('".$dataInclusão."',NULL,".$idAluno.",".$projeto.",".$result['Analista'].",".$result['Comunicador'].", ".$result['Planejador'].", ".$result['Executor'].")";
     $stmt = $con->prepare($query);
     $stmt->execute();
 
