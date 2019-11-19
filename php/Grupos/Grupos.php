@@ -1,4 +1,5 @@
 <?php
+  clearstatcache():
   error_reporting(0);
   class Group {
     

@@ -262,7 +262,9 @@
           data: 'result='+selections+'&projeto='+projeto+'&aluno='+aluno,
           url: 'php/servicos/_questionario.php?',
           method: 'POST', // or GET
-          success: window.location.replace("index.php"),
+          success: function(result){
+            window.location.replace("resultQuiz.php?idAluno="+aluno+"&projeto="+projeto);
+          }
         });
         $('#next').hide();
       }

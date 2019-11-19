@@ -1,4 +1,5 @@
 <?php
+clearstatcache();
 class Conexao
 {
  

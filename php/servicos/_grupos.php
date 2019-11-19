@@ -1,5 +1,5 @@
 <?php
-
+    clearstatcache();
     include_once('../Conexao/Conexao.php');
     include_once('../Grupos/Grupos.php');
     $conexao = new Conexao();

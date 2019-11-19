@@ -1,5 +1,5 @@
 <?php
-
+    clearstatcache();
     include_once('../Conexao/Conexao.php');
     $conexao = new Conexao();
     $con = $conexao->conectar();
