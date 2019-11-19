@@ -1,0 +1,60 @@
+h5{
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom: 1px solid #0000001a;
+  padding-bottom: 3px;
+  margin-top: 25px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+h6{
+  text-align: center;
+  font-style: initial;
+  font-weight: bold;
+  font-size: 20px;
+  color: #00000085;
+}
+
+label{
+  font-size: 14px;
+  font-weight: bold;
+  width: auto;
+  padding: 0;
+}
+
+span{
+  font-size: 15px;
+}
+
+.spanStack{
+  font-size: 20px;
+  font-weight: bold;
+  color: #00000085;
+}
+
+.labelStack{
+  font-size: 20px;
+  font-weight: bold;
+  color: #cf1717;
+}
+
+.perfil{
+  margin-right: 5px;
+  padding-right: 5px;
+  border-right: 1px solid;
+  width: 35%;
+}
+
+.predominante{
+  text-align: center;
+  margin-left: 10px;
+}
+
+.perfilProdominante{
+  font-size: 25px;
+  font-weight: bold;
+  color: #cf1717;
+  margin-top: 8%;
+  padding: 0;
+}
