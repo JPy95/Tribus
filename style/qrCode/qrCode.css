@@ -14,9 +14,8 @@
 
 
 .resumoQrcode{
-    margin-left: 40px;
-    align-self: center;
-    margin-bottom: 15px;
+    text-align: center;
+    margin-top: -25px;
 }
 
 label{

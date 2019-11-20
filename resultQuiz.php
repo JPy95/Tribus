@@ -12,10 +12,11 @@
       <!-- Perfil -->
       <?php include_once('elementos/profileStudent.php')?>
       <script>
-        setTimeout(function() {
+        setInterval(function() {
           var qtdeAluno = document.getElementById('aluno');
           var tableGroup = document.getElementById('tableGroup');
           var stack = document.getElementById('stack');
+          var logo = document.getElementById('logo');
           var projeto = window.location.search.substring(1).split('&')[1].split('=')[1];
           $.ajax({
             data: 'projeto='+projeto,
@@ -25,11 +26,15 @@
               qtdeAluno.innerHTML = result;
               if(result == 0){
                 stack.style.display = 'none';
-                tableGroup.style.display = 'block';
+                logo.style.display = 'block';
+                setTimeout(function() {
+                  logo.style.display = 'none';
+                  tableGroup.style.display = 'block';
+                }, 15000);
               }
             }
           });
-        }, 5000);
+        }, 3000);
       </script>
       <div id="stack" style="text-align: center;margin-top: 25px; display:block">
         <h6 style="margin: 0;">Aguarde, já confirmaremos o seu grupo</h6>
@@ -39,8 +44,9 @@
       </div>
 
       <!-- Table Group -->
+      <img id="logo" src="img/Logo/logoGif.gif" style="display: none; width: 30%; margin: 43px 34% 0;">
       <div id="tableGroup" style="display:none;">
-        <div class="tables">
+        <div class="tables" style="width: initial;">
           <h5>Este é seu Grupo</h5>
           <div class="areasTabela">
             <table class="table-squad">
