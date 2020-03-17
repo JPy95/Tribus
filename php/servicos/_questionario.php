@@ -16,6 +16,23 @@
     $result['Planejador'] = $result['Planejador']*4;
     $result['Executor'] = $result['Executor']*4;
 
+    $perfil = array_search(max($result), $result);
+
+    if($perfil == 1){
+        $perfil = "Analista";
+    } elseif (perfil == 2) {
+        $perfil = "Comunicador";
+    } elseif (perfil == 2) {
+        $perfil = "Planejador";
+    } else{
+        $perfil = "Executor";
+    }
+
+    $query = "INSERT INTO coleta_dados VALUES(".$_POST['result'].",'".$perfil."')";
+    $stmt = $con->prepare($query);
+    $stmt->execute();
+
+/*
     //insere perfil comportamental no banco
     $query="INSERT INTO perfil VALUES('".$dataInclusão."',NULL,".$idAluno.",".$projeto.",".$result['Analista'].",".$result['Comunicador'].", ".$result['Planejador'].", ".$result['Executor'].")";
     $stmt = $con->prepare($query);
@@ -26,5 +43,5 @@
     //atualizando dados do aluno
     $query = "UPDATE alunos SET perfil = '".$perfil."' WHERE idAluno=".$idAluno;
     $stmt = $con->prepare($query);
-    $stmt->execute();
+    $stmt->execute();*/
 ?>

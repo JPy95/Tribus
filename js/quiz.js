@@ -166,7 +166,14 @@
   var selections = []; //Array containing user choices
   var quiz = $('#quiz'); //Quiz div object
 
-  var values = ['Analista','Comunicador','Planejador','Executor']; //value inputs
+  var values = [1,2,3,4]; //value inputs
+
+  /*
+    1 - Analista
+    2 - Comunicador
+    3 - Planejador
+    4 - Executor
+  */
   
   // Display initial question
   displayNext();
@@ -254,7 +261,7 @@
           url: 'php/servicos/_questionario.php?',
           method: 'POST', // or GET
           success: function(result){
-            window.location.replace("resultQuiz.php?idAluno="+aluno+"&projeto="+projeto);
+            window.location.replace("questionario.php");
           }
         });
         $('#next').hide();
