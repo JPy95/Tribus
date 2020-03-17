@@ -25,9 +25,13 @@ class TestTribus():
       self.driver.find_element(By.ID, "next").click()
 
 if __name__ == '__main__':
+  import selenium
   teste = TestTribus()
   teste.test_tribus()
   contador = True
   while (contador):
-    teste.questionario()
-    time.sleep(2)
+    try:
+      teste.questionario()
+      time.sleep(2)
+    except selenium.common.exceptions.StaleElementReferenceException:
+      time.sleep(2)
