@@ -16,6 +16,7 @@ class TestTribus():
   def test_tribus(self):
     self.driver = webdriver.Chrome()
     self.driver.get("http://tribus.dx.am/")
+    self.driver.set_window_size(1366, 738)
     self.driver.find_element(By.LINK_TEXT, "Quiz Comportamental").click()
 
   def questionario(self):
