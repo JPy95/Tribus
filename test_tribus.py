@@ -4,12 +4,14 @@ import time
 import json
 import random
 from selenium import webdriver
+from selenium.common import exceptions
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 
 class TestTribus():
   
@@ -26,7 +28,6 @@ class TestTribus():
       self.driver.find_element(By.ID, "next").click()
 
 if __name__ == '__main__':
-  import selenium
   teste = TestTribus()
   teste.test_tribus()
   contador = True
@@ -34,5 +35,6 @@ if __name__ == '__main__':
     try:
       teste.questionario()
       time.sleep(2)
-    except selenium.common.exceptions.StaleElementReferenceException:
+    except exceptions.StaleElementReferenceException:
       time.sleep(2)
+      pass
