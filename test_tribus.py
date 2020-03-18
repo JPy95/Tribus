@@ -38,3 +38,6 @@ if __name__ == '__main__':
     except exceptions.StaleElementReferenceException:
       time.sleep(2)
       pass
+    except exceptions.NoSuchElementException:
+      time.sleep(2)
+      pass
